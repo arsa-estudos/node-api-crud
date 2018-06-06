@@ -1,0 +1,25 @@
+{
+  "name": "node-api-crud",
+  "version": "1.0.0",
+  "description": "CRUD com node e mongo using restfull",
+  "main": "server.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --report spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arsa-estudos/node-api-crud.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.4",
+    "request": "^2.87.0"
+  },
+  "author": "Alane Ribeiro <alane.ribeiro@gmail.com> (https://alaneribeiro.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arsa-estudos/node-api-crud/issues"
+  },
+  "homepage": "https://github.com/arsa-estudos/node-api-crud#readme"
+}
