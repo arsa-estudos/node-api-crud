@@ -1,19 +1,27 @@
 var express = require('express')
-var app = express();
-var bodyParser = require('body-parser');
+var app = express()
+var bodyParser = require('body-parser')
+var mongoose = require('mongoose')
+var Produto = require('./app/modules/produto')
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
+mongoose.connect('mongodb://<aribeiro>:<aribeiro123>@ds251210.mlab.com:51210/node-api-crud')
 
-var port = process.env.port || 8000;
+app.use(bodyParser.urlencoded({
+ extended: true
+}))
+app.use(bodyParser.json())
 
-var router = express.Router();
+var port = process.env.port || 8000
 
-router.get('/', function(req, res){
- res.json({ message: 'Beleza!'})
-});
+var router = express.Router()
 
-app.use('/api', router);
+router.get('/', function (req, res) {
+ res.json({
+  message: 'Beleza!'
+ })
+})
 
-app.listen(port);
-console.log('Iniciando a api na porta ' + port);
+app.use('/api', router)
+
+app.listen(port)
+console.log('Iniciando a api na porta ' + port)
