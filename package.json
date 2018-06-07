@@ -4,7 +4,8 @@
   "description": "CRUD com node e mongo using restfull",
   "main": "server.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --report spec"
+    "test": "./node_modules/.bin/mocha --report spec",
+    "dev": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/arsa-estudos/node-api-crud/issues"
   },
-  "homepage": "https://github.com/arsa-estudos/node-api-crud#readme"
+  "homepage": "https://github.com/arsa-estudos/node-api-crud#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
 }
