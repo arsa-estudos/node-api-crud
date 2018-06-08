@@ -69,14 +69,14 @@ router
   .get(function(req, res) {
     Produto.findById(req.params.produto_id, function(error, produto) {
       if (error) {
-        res.send("Lista de produtos não pôde ser recuperada. " + error);
+        res.send("Produto não encontrado. " + error);
       }
       res.json(produto);
     });
   })
 
   .put(function(req, res) {
-    Produto.updateOne(req.params.produto_id, function(error, produto) {
+    Produto.findById(req.params.produto_id, function(error, produto) {
       if (error) {
         res.send("Produto não encontrado. " + error);
       }
