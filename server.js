@@ -29,7 +29,7 @@ router.use(function(req, res, next) {
 
 router.get("/", function(req, res) {
   res.json({
-    message: "Beleza!"
+    message: "API funcionando perfeitamente!!"
   });
 });
 
@@ -76,7 +76,7 @@ router
   })
 
   .put(function(req, res) {
-    Produto.updateOne(req.params.produto_i, function(error, produto) {
+    Produto.updateOne(req.params.produto_id, function(error, produto) {
       if (error) {
         res.send("Produto não encontrado. " + error);
       }
@@ -95,15 +95,16 @@ router
     });
   })
 
-  .delete(function(req, res) {
+  .delete(function (req, res) {
     Produto.remove({
       _id: req.params.produto_id
-    }),
-      function(error) {
-        res.send("Erro ao deletar o produto. " + error);
-      };
-    res.json({ message: "Produto excluído com sucesso." });
-  });
+    }, function(error){
+      if (error){
+        res.send("Erro ao remover produto. " + error)
+      }
+      res.json({message: "Produto excluído com sucesso."})
+    })
+  })  
 
 app.use("/api", router);
 
